@@ -1,18 +1,16 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """
-Pascal triangle that returns a list
-intergers
+Print Pascal's Triangle
 """
 
 
 def pascal_triangle(n):
-    if n <= 0:
-        return []
-    triangle = [[1]]
-    for i in range(1, n):  # n is another array in triangle
-        row = [1]  # every row begins with 1
-        for j in range(1, i):
-            row.append(triangle[i - 1][j - 1] + triangle[i - 1][j])
-        row.append(1)
-        triangle.append(row)
-    return triangle
+    """returns Pascal's triangle in a list of list"""
+    my_list = []
+    if (n <= 0):
+        return my_list
+    my_list.append([1])
+    for i in range(n - 1):
+        my_list.append([1] + [my_list[i][a] + my_list[i][a + 1]
+            for a in range(len(my_list[i]) - 1)] + [1])
+    return my_list
