@@ -1,7 +1,9 @@
 #!/usr/bin/python
 """
-Pascal triangle that returns a list o intergers representing the pascal's triangle
+Pascal triangle that returns a list
+intergers
 """
+
 
 def pascal_triangle(n):
     if n <= 0:
