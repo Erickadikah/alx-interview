@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """Using prime factorization to compute the minimum number of operations
     n: represents the number of operations
     ops: represents operations
@@ -20,3 +20,4 @@ def minOperations(n):
         else:
             divisor += 1
     return ops
+#ops =
