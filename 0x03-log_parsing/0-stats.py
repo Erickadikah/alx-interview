@@ -10,21 +10,29 @@ import sys
 stdin = sys.stdin
 counter = 0
 total_size = 0
-status_code_counts = {200: 0, 301: 0, 400: 0, 401: 0, 404: 0, 405: 0, 500: 0}
+status_code_counts = {
+        200: 0,
+        301: 0,
+        400: 0,
+        401: 0,
+        404: 0,
+        405: 0,
+        500: 0}
 try:
     for line in stdin:
         counter += 1
         status_code = int(line.split()[-2])
         file_size = int(line.split()[-1])
-        total_size += file_size
         if status_code in status_code_counts:
             status_code_counts[status_code] += 1
-
+            total_size += file_size
         if counter % 10 == 0:
             print("File size: {}".format(total_size))
             for code, count in status_code_counts.items():
-                print("{}: {}".format(code, count))
+                if count != 0:
+                    print("{}: {}".format(code, count))
 except KeyboardInterrupt as error:
     print("File size: {}".format(total_size))
     for code, count in status_code_counts.items():
-        print("{}: {}".format(code, count))
+        if count != 0:
+            print("{}: {}".format(code, count))
