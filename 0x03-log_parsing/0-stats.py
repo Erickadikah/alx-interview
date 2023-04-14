@@ -6,6 +6,7 @@
 """
 import sys
 
+
 def process_logs(log_lines):
     counter = 0
     total_size = 0
@@ -28,6 +29,7 @@ def process_logs(log_lines):
             print_stats(total_size, status_code_counts)
     print_stats(total_size, status_code_counts)
 
+
 def parse_log_line(line):
     """ pass a line with a format:
       <IP Address> - [<date>] "GET /projects/260 HTTP/1.1" <status code>
@@ -39,6 +41,7 @@ def parse_log_line(line):
     file_size = int(fields[-1])
     return status_code, file_size
 
+
 def print_stats(total_size, status_code_counts):
     """
     prints the status
@@ -47,6 +50,7 @@ def print_stats(total_size, status_code_counts):
     for code, count in status_code_counts.items():
         if count != 0:
             print("{}: {}".format(code, count))
+
 
 if __name__ == '__main__':
     stdin = sys.stdin
