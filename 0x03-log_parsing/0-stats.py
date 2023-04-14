@@ -52,7 +52,7 @@ def print_stats(total_size, status_code_counts):
             print("{}: {}".format(code, count))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     stdin = sys.stdin
     try:
         process_logs(stdin)
