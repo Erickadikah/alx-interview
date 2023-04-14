@@ -20,16 +20,19 @@ def process_logs(log_lines):
         405: 0,
         500: 0
     }
-    for line in log_lines:
-        counter += 1
-        status_code, file_size = parse_log_line(line)
-        if status_code in status_code_counts:
-            status_code_counts[status_code] += 1
-        total_size += file_size
-        if counter % 10 == 0:
-            counter = 0
-            print_stats(total_size, status_code_counts)
-    print_stats(total_size, status_code_counts)
+    try:
+        for line in log_lines:
+            counter += 1
+            status_code, file_size = parse_log_line(line)
+            if status_code in status_code_counts:
+                status_code_counts[status_code] += 1
+            total_size += file_size
+            if counter % 10 == 0:
+                counter = 0
+                print_stats(total_size, status_code_counts)
+        print_stats(total_size, status_code_counts)
+    except KeyboardInterrupt as error:
+      print_stats(total_size, status_code_counts)
 
 
 def parse_log_line(line):
@@ -59,4 +62,4 @@ if __name__ == "__main__":
     try:
         process_logs(stdin)
     except KeyboardInterrupt as error:
-        process_logs(stdin)
+      print_stats(total_size, status_code_counts)
