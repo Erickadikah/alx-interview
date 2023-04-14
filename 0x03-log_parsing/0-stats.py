@@ -15,6 +15,7 @@ def process_logs(log_lines):
         301: 0,
         400: 0,
         401: 0,
+        403: 0,
         404: 0,
         405: 0,
         500: 0
@@ -24,8 +25,9 @@ def process_logs(log_lines):
         status_code, file_size = parse_log_line(line)
         if status_code in status_code_counts:
             status_code_counts[status_code] += 1
-            total_size += file_size
+        total_size += file_size
         if counter % 10 == 0:
+            counter = 0
             print_stats(total_size, status_code_counts)
     print_stats(total_size, status_code_counts)
 
