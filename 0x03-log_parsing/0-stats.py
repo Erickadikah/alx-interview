@@ -60,3 +60,4 @@ def print_stats(total_size, status_code_counts):
 if __name__ == "__main__":
     stdin = sys.stdin
     process_logs(stdin)
+
