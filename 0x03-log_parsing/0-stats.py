@@ -30,25 +30,9 @@ def process_logs(log_lines):
             if counter % 10 == 0:
                 counter = 0
                 print_stats(total_size, status_code_counts)
-                print_stats(total_size, status_code_counts)
-                total_size = 0
-                status_code_counts = {
-                    200: 0,
-                    301: 0,
-                    400: 0,
-                    401: 0,
-                    403: 0,
-                    404: 0,
-                    405: 0,
-                    500: 0
-                }
-        if counter > 0:
-            page_size = counter
-            print_stats(total_size, status_code_counts)
-    except KeyboardInterrupt:
-        if counter > 0:
-            page_size = counter
-            print_stats(total_size, status_code_counts)
+        print_stats(total_size, status_code_counts)
+    except KeyboardInterrupt as error:
+      print_stats(total_size, status_code_counts)
 
 
 def parse_log_line(line):
@@ -75,4 +59,7 @@ def print_stats(total_size, status_code_counts):
 
 if __name__ == "__main__":
     stdin = sys.stdin
-    process_logs(stdin)
+    try:
+        process_logs(stdin)
+    except KeyboardInterrupt as error:
+      print_stats(total_size, status_code_counts)
