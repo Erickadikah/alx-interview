@@ -30,8 +30,6 @@ def validUTF8(data):
                 bytes_number = 2
             elif (byte >> 3) == 0b11110:
                 bytes_number = 3
-            elif (byte >> 2) == 0b111110:
-                bytes_number = 4
             else:
                 return False
         else:
