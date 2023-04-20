@@ -13,11 +13,16 @@ def validUTF8(data):
         resulting to true if the number is 0
         byte_number: keep track of the number of bytes
         in the current UTF-8 character
+        (byte >> 7) == 0: 1 byte character
+        (byte >> 5) == 0b110: 2 byte character
+        (byte >> 4) == 0b1110: 3 byte character
+        (byte >> 3) == 0b11110: 4 byte character
+        (byte >> 2) == 0b111110: 5 byte character
     """
     bytes_number = 0
     for byte in data:
         if bytes_number == 0:
-            if ( byte >> 7) == 0:
+            if (byte >> 7) == 0:
                 continue
             elif (byte >> 5) == 0b110:
                 bytes_number = 1
@@ -25,6 +30,8 @@ def validUTF8(data):
                 bytes_number = 2
             elif (byte >> 3) == 0b11110:
                 bytes_number = 3
+            elif (byte >> 2) == 0b111110:
+                bytes_number = 4
             else:
                 return False
         else:
