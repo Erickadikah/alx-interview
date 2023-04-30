@@ -7,6 +7,7 @@
 """
 import sys
 
+
 def nqueens(n: int):
     """Args: n type int
     """
@@ -30,10 +31,11 @@ def nqueens(n: int):
                 backtrack(board, row + 1, solutions)
                 board[row][col] = 0
 
-    board = [[0] *n for _ in range(n)]
+    board = [[0] * n for _ in range(n)]
     solutions = []
     backtrack(board, 0, solutions)
     return solutions
+
 
 def is_valid(board, row, col):
     """
@@ -65,6 +67,7 @@ def is_valid(board, row, col):
 
     return True
 
+
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: python nqueens.py N")
@@ -79,4 +82,3 @@ if __name__ == "__main__":
     solutions = nqueens(n)
     for solution in solutions:
         print(solution)
-
