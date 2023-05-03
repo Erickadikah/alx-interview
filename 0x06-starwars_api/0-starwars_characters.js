@@ -22,10 +22,10 @@ request(url, function (error, _response, body) {
   }
   const charactersMap = new Map();
 
-    {/*
+  { /*
     getting character for each chracter filtered from character url
     checking for character in each Url
-    */}
+    */ }
   charatersUrls.forEach((url, index) => {
     request(url, function (error, _response, body) {
       if (error) {
@@ -33,11 +33,11 @@ request(url, function (error, _response, body) {
         return;
       }
 
-    {/*
+      { /*
       variable pass characters in json format
       mapping characters in set of name and order
       :according to character index
-    */}
+    */ }
 
       const character = JSON.parse(body);
       charactersMap.set(url, {
@@ -45,11 +45,11 @@ request(url, function (error, _response, body) {
         order: index
       });
 
-      {/*
+      { /*
         check if all charactersUrls have been processed by request
         and pass the to sortedCharacters array then sorted in order property
         in ascending order , and print each in an ascending order
-    */}
+    */ }
 
       if (charactersMap.size === charatersUrls.length) {
         const sortedCharacters = Array.from(charactersMap.values()).sort((a, b) => a.order - b.order);
