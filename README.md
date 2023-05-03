@@ -1,5 +1,5 @@
-# Pascal triangle
-<p> Technical interview preparation</p>
+
+# Technical interview preparation
 
 * [Pascal Triangle](0x00-pascal_triangle)
 
