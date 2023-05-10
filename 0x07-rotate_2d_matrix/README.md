@@ -23,7 +23,6 @@ output:
 2 5  8
 3 6  9
 
-
 reverse each row:
 
 7 4 1
@@ -34,9 +33,11 @@ reverse each row:
 
 output:
 
-7 4 1
-8 5 2
-9 6 3
+```python
+[[7, 4, 1],
+[8, 5, 2],
+[9, 6, 3]]
+
 
 ```python
 def rotate_2d_matrix(matrix):
