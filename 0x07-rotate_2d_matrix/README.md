@@ -51,6 +51,6 @@ def rotate_2d_matrix(matrix):
         row.reverse()
 ```
 
-## Author:bulb
+## Author:bulb:
 
 Erick Adikah - [Twitter: @erick_adikah](https://twitter.com/erick_adikah)
