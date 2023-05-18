@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Making change Implemenation"""
 
+
 def makeChange(coins: int, total: int):
     """ARGS: Coins, total
         function that determines the fewest number of coins
@@ -20,7 +21,6 @@ def makeChange(coins: int, total: int):
     if total != 0:
         return -1
     return counter
-
 
     # for coin in sorted(coins, reverse=True):
     #     count =int(total // coin)
