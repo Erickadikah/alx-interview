@@ -14,3 +14,7 @@
 * [N Queens](0x0C-nqueens)
 
 * [Star Wars API](0x0C-Web_stack_monitoring)
+
+* [rotate_2d_matrix](0x07-rotate_2d_matrix)
+
+* [Making Change](0x08-making_change)
