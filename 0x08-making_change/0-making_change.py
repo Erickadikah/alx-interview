@@ -5,6 +5,7 @@
 def makeChange(coins: int, total: int):
     """ARGS: Coins, total
         function that determines the fewest number of coins
+        needed to meet a given amount total.
     """
     counter = 0
     if total <= 0:
