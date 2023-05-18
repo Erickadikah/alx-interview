@@ -15,4 +15,15 @@ Given a pile of coins of different values, determine the fewest number of coins 
 
 * Language: Python 3.4.3
 
-In this example im using Memoization to solve the problem. The idea is to create a table of size `total + 1` and initialize all values in table as `0`. One by one we pick coins one by one and update the table[] values after the index greater than or equal to the value of the picked coin. The base case of recursion will be when `total` is equal to `0`. For example, for `total` 4 and coins `{1,2,3}`, there are 4 solutions: `{1,1,1,1},{1,1,2},{2,2},{1,3}`. So output should be `4`. For `total` 10 and coins `{2,5,3,6}`, there are 5 solutions: `{2,2,2,2,2},{2,2,3,3},{2,2,6},{2,3,5}` and `{5,5}`. So the output should be `5`.
+In this example im using a greedy algorithm to solve the problem. The algorithm is as follows:
+
+1. Sort the coins in descending order
+2. Iterate through the coins
+3. If the current coin is less than the total, add the quotient of the total divided by the current coin to the number of coins
+4. Set the total to the remainder of the total divided by the current coin
+5. If the total is 0, return the number of coins
+6. If the total is not 0, return -1
+
+## File Descriptions
+
+- `0-making_change.py`: contains the function `makeChange`
