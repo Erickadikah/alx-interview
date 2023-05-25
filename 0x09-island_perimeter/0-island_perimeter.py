@@ -14,14 +14,14 @@ def island_perimeter(grid):
     # if not grid or not grid[0]:
     #     return 0;
 
-    #getting rows from the grid
+    # getting rows from the grid
     rows = len(grid)
     perimeter = 0
 
     for row in range(rows):
         for col in range(len(grid[row])):
             if grid[row][col] == 1:
-                ##assuing the current cell contributes 4 to the perimeter
+                # assuing the current cell contributes 4 to the perimeter
                 perimeter += 4
                 # print(perimeter)
                 if row > 0 and grid[row - 1][col] == 1:
