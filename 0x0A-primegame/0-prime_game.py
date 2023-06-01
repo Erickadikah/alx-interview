@@ -3,8 +3,6 @@
     x: is the number of rounds
     nums: is an array of n
 """
-from more_itertools import value_chain
-
 
 def is_prime(num):
     """Checking validity of prime number
