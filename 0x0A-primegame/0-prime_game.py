@@ -4,6 +4,7 @@
     nums: is an array of n
 """
 
+
 def is_prime(num):
     """Checking validity of prime number
     """
